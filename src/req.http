@@ -1,0 +1,45 @@
+POST http://localhost:3333/settings HTTP/1.1
+content-type: application/json
+
+{
+    "chat": true,
+    "username": "admin"
+}
+
+###
+POST http://localhost:3333/users HTTP/1.1
+content-type: application/json
+
+{
+    "user_id": "82be20a6-f62b-423d-af56-065bd9b6d19b",
+    "email": "gbraga@rocketseat.com"
+}
+###
+POST http://localhost:3333/messages HTTP/1.1
+content-type: application/json
+
+{
+    "user_id": "82be20a6-f62b-423d-af56-065bd9b6d19b",
+    "text": "aloaloalo"
+}
+
+###
+POST http://localhost:3333/messages HTTP/1.1
+content-type: application/json
+
+{
+    "user_id": "82be20a6-f62b-423d-af56-065bd9b6d19b",
+    "text": "ok robson",
+    "admin_id": "cace1cc8-60e3-49a5-8ed6-c5ef0373df5d"
+}
+
+###
+GET http://localhost:3333/messages/82be20a6-f62b-423d-af56-065bd9b6d19b HTTP/1.1
+
+###
+PUT http://localhost:3333/settings/admin HTTP/1.1
+content-type: application/json
+
+{
+    "chat": true
+}
